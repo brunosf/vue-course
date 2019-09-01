@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+  <a v-bind:href="link">Binding de atributos - v-bind:href="link"</a>
+  <!--
+        Forma reduzida
+        <a :href="link"></a>
+     -->
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Usando Vue js",
+      link: "https://www.google.com.br"
+    },
+    methods: {
+      // ou saudacao() {}
+      saudacao: function() {
+        return this.titulo;
+      }
+    }
+  });
+</script>

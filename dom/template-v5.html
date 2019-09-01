@@ -1,0 +1,29 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <!-- diretiva v-once altera uma unica vez, o Vue não fica mais olhando para o elemento setado com v-once -->
+  <p v-once>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+  <div>
+    <a v-bind:href="link">Binding de atributos - v-bind:href="link"</a>
+  </div>
+  <div>
+    <a :href="link">Binding de atributos, forma reduzida - :href="link"</a>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Usando Vue js",
+      link: "https://www.google.com.br"
+    },
+    methods: {
+      // ou saudacao() {}
+      saudacao: function() {
+        return (this.titulo = "Bom diaa!!!");
+      }
+    }
+  });
+</script>
